@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %} Boggle {% endblock %}
+{% block content %}
+<div id="body-container">
+    <div class="side-divs">
+ 
+    <div id="score-div">
+        <h1>Score:</h1>
+        <p id="score"></p>        
+    </div>
+    <section class="messages"></section>
+    <form id="guess-form" method="POST">  
+        <input id="guess-input" type="text" name="guess" placeholder="Type Guess Here">
+        <button id="guess-submit" disabled>Submit</button>
+    </form></div>
+
+<div id="game-board">
+    <table class="board">
+        {% for row in board %}
+        <tr class="row">
+        {% for letter in row %}
+        <td class="letter">{{letter}}</td>
+        {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<div class="side-divs">
+<div id="time">0</div>
+<canvas id="stopwatch" width = 200 height = 200></canvas>
+<button id="start-game">Start Game!</button></div>
+
+
+{% endblock %}
+

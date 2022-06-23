@@ -1,0 +1,179 @@
+body {
+	background-color: #503ccd;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+	height: 100px;
+	margin-bottom: 10px;
+	margin-top: 0;
+}
+
+button {
+	color: #fff;
+	border: none;
+	text-transform: uppercase;
+}
+
+#body-container {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.side-divs {
+	width: 30%;
+	height: 100%;
+}
+
+#score-div {
+	border: 2px solid #fff;
+	border-radius: 20px;
+	color: #fff;
+	margin-bottom: 45px;
+}
+
+#guess-input,
+#guess-submit,
+#score {
+	font-size: 20px;
+	margin: 10px;
+}
+
+#guess-submit {
+	background-color: #fda085;
+}
+#guess-submit:hover {
+	background-color: #fd8665;
+}
+
+#guess-submit:disabled {
+	background-color: #ddd;
+}
+
+#start-game:hover {
+	text-shadow: 0 0 10px #fff;
+}
+
+#game-board {
+	position: relative;
+}
+
+.btn-container {
+	height: 200px;
+	position: relative;
+}
+
+.board {
+	background-color: #ffffff;
+	position: relative;
+	/* height: 40%; */
+	width: 40%;
+	margin: auto;
+	border: 2px solid #ddd;
+}
+
+.row {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+
+.letter {
+	background-color: #e7e4e4;
+	display: inline-block;
+	border: 5px solid #ddd;
+	text-align: center;
+	height: 3.5rem;
+	width: 3.5rem;
+	font-size: 3rem;
+	color: #585858;
+	margin: 0.75rem;
+}
+
+.messages {
+	display: none;
+	font-size: 1.5rem;
+	border: 1px solid;
+	margin: 10px 0px;
+	padding: 15px 10px 15px 50px;
+}
+
+.wrong-word {
+	color: #d8000c;
+	background-color: #ffbaba;
+}
+
+.ok-word {
+	color: #4f8a10;
+	background-color: #dff2bf;
+}
+
+.points {
+	color: #f6d365;
+	position: absolute;
+	width: 40%;
+	font-size: 5rem;
+	font-weight: bold;
+	text-shadow: 0 0 10px #fff;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-animation: fadeinout 2.15s linear forwards;
+	animation: fadeinout 2.15s linear forwards;
+}
+
+@-webkit-keyframes fadeinout {
+	0%,
+	100% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeinout {
+	0%,
+	100% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+/* https://stackoverflow.com/questions/17573324/dynamically-center-div-over-another-div */
+
+#time {
+	color: #fff;
+	font-family: Arial;
+	font-size: 40px;
+	left: 78%;
+	width: 200px;
+	text-align: center;
+}
+#stopwatch {
+	position: absolute;
+	left: 75%;
+	margin: auto;
+	border: 2px solid #fff;
+	border-radius: 50px;
+}
+
+#start-game,
+#time {
+	background-color: #503ccd;
+	position: absolute;
+	margin-top: 7%;
+	margin-right: 20%;
+	margin-left: -3%;
+}
+
+#start-game {
+	font-size: 20px;
+}
+
+/* https://codepen.io/myriadwc/pen/QWKaLX */
