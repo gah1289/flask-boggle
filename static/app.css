@@ -2,12 +2,7 @@ body {
 	background-color: #503ccd;
 	text-align: center;
 	font-family: Arial, Helvetica, sans-serif;
-}
-
-img {
-	height: 100px;
-	margin-bottom: 10px;
-	margin-top: 0;
+	color: #fff;
 }
 
 button {
@@ -23,13 +18,11 @@ button {
 
 .side-divs {
 	width: 30%;
-	height: 100%;
 }
 
 #score-div {
 	border: 2px solid #fff;
 	border-radius: 20px;
-	color: #fff;
 	margin-bottom: 45px;
 }
 
@@ -59,6 +52,41 @@ button {
 	position: relative;
 }
 
+#stopwatch {
+	position: absolute;
+	left: 75%;
+	margin: auto;
+	border: 2px solid #fff;
+	border-radius: 50px;
+}
+
+#start-game,
+#time {
+	background-color: #503ccd;
+	position: absolute;
+	margin-top: 7%;
+	margin-right: 20%;
+	margin-left: -3%;
+}
+
+#start-game {
+	font-size: 20px;
+}
+
+#time {
+	font-size: 40px;
+	left: 78%;
+	width: 200px;
+	text-align: center;
+}
+
+.blur {
+	-webkit-filter: blur(15px);
+	filter: blur(15px);
+	background-color: #ccc;
+}
+/* https://stackoverflow.com/questions/11977103/blur-effect-on-a-div-element */
+
 .btn-container {
 	height: 200px;
 	position: relative;
@@ -67,7 +95,6 @@ button {
 .board {
 	background-color: #ffffff;
 	position: relative;
-	/* height: 40%; */
 	width: 40%;
 	margin: auto;
 	border: 2px solid #ddd;
@@ -80,6 +107,14 @@ button {
 }
 /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
 
+.high-score {
+	text-transform: uppercase;
+	/* font-size: 25px; */
+	text-shadow: 0 0 0px #fff, 0 0 5px #fff, 0 0 21px #fff, 0 0 42px #ff7f50, 0 0 82px #ff7f50, 0 0 92px #ff7f50,
+		0 0 102px #ff7f50, 0 0 151px #ff7f50;
+}
+/* https://css-tricks.com/how-to-create-neon-text-with-css/ */
+
 .letter {
 	background-color: #e7e4e4;
 	display: inline-block;
@@ -90,6 +125,14 @@ button {
 	font-size: 3rem;
 	color: #585858;
 	margin: 0.75rem;
+}
+
+.logo {
+	font-family: 'Nerko One', cursive;
+	font-size: 5em;
+	margin: 0 0 10px;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+	/* https://stackoverflow.com/questions/4919076/outline-effect-to-text */
 }
 
 .messages {
@@ -120,7 +163,6 @@ button {
 	left: 50%;
 	top: 50%;
 	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	-webkit-animation: fadeinout 2.15s linear forwards;
 	animation: fadeinout 2.15s linear forwards;
@@ -146,34 +188,5 @@ button {
 	}
 }
 /* https://stackoverflow.com/questions/17573324/dynamically-center-div-over-another-div */
-
-#time {
-	color: #fff;
-	font-family: Arial;
-	font-size: 40px;
-	left: 78%;
-	width: 200px;
-	text-align: center;
-}
-#stopwatch {
-	position: absolute;
-	left: 75%;
-	margin: auto;
-	border: 2px solid #fff;
-	border-radius: 50px;
-}
-
-#start-game,
-#time {
-	background-color: #503ccd;
-	position: absolute;
-	margin-top: 7%;
-	margin-right: 20%;
-	margin-left: -3%;
-}
-
-#start-game {
-	font-size: 20px;
-}
 
 /* https://codepen.io/myriadwc/pen/QWKaLX */

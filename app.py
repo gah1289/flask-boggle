@@ -12,6 +12,7 @@ toolbar= DebugToolbarExtension(app)
 boggle_game = Boggle()
 
 
+
 @app.route('/')
 def start():
     '''Show start button'''
@@ -24,7 +25,7 @@ def start():
 @app.route('/check-word', methods=["POST"])
 def check_if_valid_word():    
     '''Check is guess word is valis using check_valid_word'''    
-    user_guess=request.form['guess']        
+    user_guess=request.form['guess']       
     board=session['board']
     status=boggle_game.check_valid_word(board,user_guess)
     result=jsonify({'result':status})   
