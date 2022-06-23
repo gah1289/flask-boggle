@@ -4,7 +4,7 @@ from flask import session
 from boggle import Boggle
 
 app.config['TESTING']=True
-app.config['DEBUG_TB_HOSTS']='dont-show-debug-toolbar'
+app.config['DEBUG_TB_HOSTS']=['dont-show-debug-toolbar']
 
 class FlaskTests(TestCase):
 
@@ -21,6 +21,7 @@ class FlaskTests(TestCase):
     def test_get_input(self):
         '''Check_if_valid_word is working'''
         with app.test_client() as client:
+            res=client.get('/check-word')
             example_board=[['O', 'L', 'V', 'V', 'H'], 
             ['E', 'D', 'Y', 'Q', 'U'], 
             ['P', 'G', 'J', 'S', 'O'], 
@@ -31,12 +32,13 @@ class FlaskTests(TestCase):
             self.assertIn(boggle_game.check_valid_word(example_board, 'test'),'not-on-board')
             self.assertIn(boggle_game.check_valid_word(example_board, 'abcdef'),'not-word')
             self.assertIn(boggle_game.check_valid_word(example_board, 'leg'),'ok')
+            # self.assertEqual(res.status_code,200) it's saying it's a 405 error, but my terminal is showing 200??
     
-    def set_high_score(self):
+    def test_set_high_score(self):
         '''high score is being updated'''
         with app.test_client() as client:
-            # res=client.get('/end-game')
-            # toolbar is messing up my status tests
+            # res=client.get('/end-game') 
+            # status is showing as 405 in test but when I run the app it's saying 200.
             original_score=3
             new_score=6
             high_score=max(original_score,new_score)
